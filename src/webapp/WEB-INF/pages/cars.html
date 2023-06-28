@@ -1,15 +1,30 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Car</title>
+    <style>table th, table td {padding: 5px;}</style>
 </head>
+
 <body>
-<div>
-  <th:block th:each="msg : ${cars}">
-    <h1 th:text="${msg}"></h1>
-  </th:block>
-</div>
+<h1>Car list</h1>
+
+<table border="1">
+    <tr>
+        <th>brand</th>
+        <th>model</th>
+        <th>price</th>
+    </tr>
+
+    <tr th:each="lst : ${list}">
+        <td th:utext="${lst.brand}">brand</td>
+        <td th:utext="${lst.model}">model</td>
+        <td align="right" th:utext="${lst.price}">price</td>
+    </tr>
+
+</table>
+
 </body>
+
 </html>
