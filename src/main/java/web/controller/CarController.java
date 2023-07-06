@@ -18,6 +18,7 @@ public class CarController {
     public String cars(
             @RequestParam(value = "count", defaultValue = "5")
             int allCars, Model model) {
+
         CarService carService = new CarServiceImp();
         List<Car> list = new ArrayList<>();
         list = carService.carsCount(list, allCars);

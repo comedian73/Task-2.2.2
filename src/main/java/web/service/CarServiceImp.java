@@ -11,15 +11,14 @@ import java.util.List;
 
 @Service
 public class CarServiceImp implements CarService {
+
     @Autowired
     private CarDao carDao = new CarDaoImp();
-
     @Override
     public List<Car> carsCount(List<Car> list, int number) {
         list = this.list();
         return carDao.carsCount(list, number);
     }
-
     private List<Car> list() {
         List<Car> list = new ArrayList<>();
         list.add(new Car("Ford", "Mustang", 20000));
